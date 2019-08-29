@@ -14,17 +14,16 @@
  */
 
 
-
+#include "Empleado.h"
 
 
 float Empleado::aumentoSalario(int *annosExperiencia) {
     float salarioNuevo = 0;
     if ((*annosExperiencia >= 1)&&(*annosExperiencia <= 3)) {
         salarioNuevo = salarioBase * (salarioBase * 0.02);
-        else {
-            if (*annosExperiencia > 3) {
-                salarioNuevo = salarioBase * (salarioBase * 0.05);
-            }
+    } else {
+        if (*annosExperiencia > 3) {
+            salarioNuevo = salarioBase * (salarioBase * 0.05);
         }
     }
     return salarioNuevo;
@@ -34,8 +33,27 @@ void Empleado::revisionAleatoria(bool *disponibilidad) {
 
 }
 
-std::string reporteEmpleado(std::string empleado[]) {
+Empleado::Empleado(){
+	
+	
+	
+}
 
+Empleado::Empleado(std::string nombre, int annosExperiencia, float salarioBase){
+	
+	
+	
+}
+
+std::string Empleado::reporteEmpleado() {
+
+    std::string reporte = "";
+    reporte = reporte + "Empleado # [" + std::to_string(identificador) + " ]\n\tNombre [ " + nombre + " ]\n\t"
+            "Annos de experiencia [" + std::to_string(annosExperiencia) + " ]\n\t"
+            "Salario Inicial [ " + std::to_string(salarioBase) + " ]\n\t"
+            "Salario Acumulado [ " + std::to_string(aumentoSalario(&annosExperiencia)) + " ]\n\t"
+            "Necesita revision [ " + std::to_string(disponibilidad) + " ]\n";
+	return reporte;
 }
 
 void Empleado::setDisponibilidad(bool disponibilidad) {
@@ -46,11 +64,11 @@ bool Empleado::getDisponibilidad() {
     return disponibilidad;
 }
 
-void Empleado::setSalarioBase(int salarioBase) {
+void Empleado::setSalarioBase(float salarioBase) {
     this->salarioBase = salarioBase;
 }
 
-int Empleado::getSalarioBase() {
+float Empleado::getSalarioBase() {
     return salarioBase;
 }
 
