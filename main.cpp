@@ -23,6 +23,11 @@ int main() {
     empleado[0].setNombre("Mike");
     empleado[0].setAnnosExperiencia(2);
     empleado[0].setSalarioBase(1200000);
+	
+	
+	for(int contador = 0; contador < 4; contador++){
+		std::cout<<empleado[contador].reporteEmpleado()<<std::endl;
+	}
 
     return 0;
 }
