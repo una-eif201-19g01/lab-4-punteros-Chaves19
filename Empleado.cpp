@@ -18,7 +18,7 @@
 #include "Empleado.h"
 
 float Empleado::aumentoSalario(const int *annosExperiencia) {
-	float salarioNuevo = 0;
+    float salarioNuevo = 0;
     if ((*annosExperiencia >= 1) && (*annosExperiencia <= 3)) {
         salarioNuevo = salarioBase + (salarioBase * 0.02);
     } else {
@@ -30,17 +30,18 @@ float Empleado::aumentoSalario(const int *annosExperiencia) {
 }
 
 void Empleado::revisionAleatoria(bool *disponibilidad) {
-    if (rand() % 2 == 0){
+    if (rand() % 2 == 0) {
         *disponibilidad = 1;
-	} else{ *disponibilidad = 0;
-		}	
+    } else {
+        *disponibilidad = 0;
+    }
 }
 
 Empleado::Empleado() {
-	nombre = "";
-	annosExperiencia = 0;
-	salarioBase = 0;
-	identificador = std::rand() % LIMITESUPERIOR;
+    nombre = "";
+    annosExperiencia = 0;
+    salarioBase = 0;
+    identificador = std::rand() % LIMITESUPERIOR;
 }
 
 Empleado::Empleado(const string *nombre, int annosExperiencia, float salarioBase) {
@@ -51,20 +52,19 @@ Empleado::Empleado(const string *nombre, int annosExperiencia, float salarioBase
 }
 
 string Empleado::obtenerDatos() {
-	
-	
+
+
     string reporte = "";
-    reporte = reporte + "Empleado [ " + std::to_string( getIdentificador() ) + " ]\nNombre [ " + getNombre() + " ]\nAnnos de experiencia [ " + std::to_string(annosExperiencia) + " ]\n"
+    reporte = reporte + "Empleado [ " + std::to_string(getIdentificador()) + " ]\nNombre [ " + getNombre() + " ]\nAnnos de experiencia [ " + std::to_string(annosExperiencia) + " ]\n"
             "Salario Inicial [ " + std::to_string(salarioBase) + " ]\n"
             "Salario Acumulado [ " + std::to_string(aumentoSalario(&annosExperiencia)) + " ]\n"
-            "Necesita revision [ "+ std::to_string(disponibilidad) + " ]\n";
+            "Necesita revision [ " + std::to_string(disponibilidad) + " ]\n";
 
-            return reporte;
+    return reporte;
 }
 
-
 void Empleado::setSalarioBase(float salarioBase) {
-	this->salarioBase = salarioBase;
+    this->salarioBase = salarioBase;
 }
 
 float Empleado::getSalarioBase() {
@@ -88,7 +88,7 @@ std::string Empleado::getNombre() {
 }
 
 void Empleado::setIdentificador(int identificador) {
-	this->identificador = identificador;
+    this->identificador = identificador;
 }
 
 int Empleado::getIdentificador() {
