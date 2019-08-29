@@ -23,11 +23,18 @@ int main() {
     empleado[0].setNombre("Mike");
     empleado[0].setAnnosExperiencia(2);
     empleado[0].setSalarioBase(1200000);
+    
+    empleado[1].setNombre("Sebastian");
+    empleado[1].setAnnosExperiencia(3);
+    empleado[1].setSalarioBase(1600000);
+    
+    empleado[2].setNombre("Carolina");
+    empleado[2].setAnnosExperiencia(8);
+    empleado[2].setSalarioBase(1800000);
 	
+    for (int contador = 0; contador < 4; contador++) {
+        std::cout << empleado[contador].obtenerDatos() << std::endl;
+    }
 	
-	for(int contador = 0; contador < 4; contador++){
-		std::cout<<empleado[contador].reporteEmpleado()<<std::endl;
-	}
-
     return 0;
 }
