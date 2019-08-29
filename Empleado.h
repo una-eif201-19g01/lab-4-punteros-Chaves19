@@ -24,19 +24,17 @@ using std::string;
 
 const int LIMITESUPERIOR = 100;
 
-
 class Empleado {
-	
 protected:
     int identificador;
     string nombre;
     int annosExperiencia;
     float salarioBase;
     bool disponibilidad;
-private: 
+private:
     float aumentoSalario(const int *);
     void revisionAleatoria(bool *);
-    
+
 public:
     string obtenerDatos();
     Empleado();
@@ -49,8 +47,8 @@ public:
 
     void setNombre(string);
     string getNombre();
-    
-	void setIdentificador(int);
+
+    void setIdentificador(int);
     int getIdentificador();
 
 };
