@@ -41,8 +41,6 @@ public:
     string obtenerDatos();
     Empleado();
     Empleado(const string *, int, float);
-    string reporteEmpleado(string vector[]);
-    
     void setSalarioBase(float);
     float getSalarioBase();
 
