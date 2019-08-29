@@ -18,40 +18,41 @@
 #define EMPLEADOPUNTEROS_EMPLEADO_H
 
 
+#include <cstdint>
 #include <string>
+using std::string;
 
 const int LIMITESUPERIOR = 100;
 
 
-class Empleado{
+class Empleado {
+	
 protected:
     int identificador;
-    std::string nombre;
+    string nombre;
     int annosExperiencia;
-    int salarioBase;
+    float salarioBase;
     bool disponibilidad;
-    float aumentoSalario(int *);
+private: 
+    float aumentoSalario(const int *);
     void revisionAleatoria(bool *);
     
 public:
-    
+    string obtenerDatos();
     Empleado();
-    Empleado(std::string, int, int);
-    std::string reporteEmpleado();
+    Empleado(const string *, int, float);
+    string reporteEmpleado(string vector[]);
     
-    void setDisponibilidad(bool);
-    bool getDisponibilidad();
-
     void setSalarioBase(float);
     float getSalarioBase();
 
     void setAnnosExperiencia(int);
     int getAnnosExperiencia();
 
-    void setNombre(std::string);
-    std::string getNombre();
-
-    void setIdentificador(int);
+    void setNombre(string);
+    string getNombre();
+    
+	void setIdentificador(int);
     int getIdentificador();
 
 };
