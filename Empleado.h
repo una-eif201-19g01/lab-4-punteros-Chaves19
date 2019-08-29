@@ -37,13 +37,13 @@ public:
     
     Empleado();
     Empleado(std::string, int, int);
-    std::string reporteEmpleado(std::string vector[]);
+    std::string reporteEmpleado();
     
     void setDisponibilidad(bool);
     bool getDisponibilidad();
 
-    void setSalarioBase(int);
-    int getSalarioBase();
+    void setSalarioBase(float);
+    float getSalarioBase();
 
     void setAnnosExperiencia(int);
     int getAnnosExperiencia();
@@ -53,10 +53,6 @@ public:
 
     void setIdentificador(int);
     int getIdentificador();
-
-
-
-
 
 };
 #endif //EMPLEADOPUNTEROS_EMPLEADO_H
